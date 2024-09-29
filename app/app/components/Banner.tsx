@@ -32,7 +32,7 @@ function Banner({ netflixOriginals }: Props) {
     }
 
     return (
-        <div className="relative">
+        <div className="relative overflow-hidden">
             <Slider {...settings}>
                 {movies.map((movie) => (
                     <div key={movie.id} className="relative h-[60vh] w-screen">
@@ -52,10 +52,10 @@ function Banner({ netflixOriginals }: Props) {
                                     {movie?.overview}
                                 </p>
                                 <div className="flex gap-x-2 items-center">
-                                    <button className="px-4 py-4 bg-white text-black text-sm font-medium rounded-md hover:bg-gray-300 transition flex w-[85px] h-8 gap-2 justify-center items-center flex-row">
+                                    <button className="px-4 py-4 bg-white text-black text-sm font-medium rounded-md drop-shadow-lg hover:bg-gray-300 transition flex w-[85px] h-8 gap-2 justify-center items-center flex-row">
                                         <PlayIcon className="text-black w-5 h-5" /> Play
                                     </button>
-                                    <button className="px-4 py-4 bg-gray-700/80 text-white text-sm font-medium rounded-md hover:bg-gray-700 transition flex w-32 h-8 gap-2 justify-center items-center">
+                                    <button className="px-4 py-4 bg-gray-700/80 text-white text-sm font-medium drop shadwo-lg rounded-md hover:bg-gray-700 transition flex w-32 h-8 gap-2 justify-center items-center">
                                         <InformationCircleIcon className="w-5 h-5"/>
                                         <span className="">More info</span>
                                     </button>

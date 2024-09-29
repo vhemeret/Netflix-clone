@@ -2,6 +2,7 @@ import Head from "next/head";
 import Header from "./components/Header";
 import Banner from "./components/Banner";
 import requests from "./utils/requests";
+import Row from "./components/Row";
 import axios from "axios";
 
 async function getData() {
@@ -46,14 +47,23 @@ export default async function Home() {
   const data = await getData();
 
   return (
-    <div className="bg-[#141414] min-h-screen relative bg-gradient-to-b from-gray-900/10 to-[#010511] overflow-hidden">
+    <div className="bg-[#141414] min-h-screen relative bg-gradient-to-b from-gray-900/10 to-[#010511]">
       <Head>
         <title>Home - Chinoflix</title>
         <link rel="icon" href="/flavicon.ico" />
       </Head>
-      <Header />
       <main>
-        <Banner netflixOriginals={data.netflixOriginals}/>
+        <Header />
+        <Banner netflixOriginals={data.netflixOriginals} />
+        <section className="pb-24 relative -mt-32">
+          <Row title='Trending Now' movieGender={data.trendingNow} />
+          <Row title='Top Rated' movieGender={data.topRated} />
+          <Row title='Horror Movies' movieGender={data.horrorMovies} />
+          <Row title='Romance Movies' movieGender={data.romanceMovies} />
+          <Row title='Action Movies' movieGender={data.actionMovies} />
+          <Row title='Documentaries' movieGender={data.documentaries} />
+          <Row title='Comedy Movies' movieGender={data.comedyMovies} />
+        </section>
       </main>
     </div>
   );

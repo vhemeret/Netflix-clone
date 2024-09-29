@@ -26,7 +26,7 @@ function Header() {
 
     return (
         <header className={`fixed top-0 z-50 flex w-full justify-between items-center content-center p-4 transition-all duration-500 lg:px-10 lg:py-6 ${isScrolled
-                ? 'bg-gradient-to-b from-black to-gray-950/60'
+                ? 'bg-gradient-to-b from-black to-gray-950'
                 : 'bg-gradient-to-b from-black/40 to-transparent'
             }`}>
             <div className="flex flex-grow p-2 space-x-2 md:space-x-10">
